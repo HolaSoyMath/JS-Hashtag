@@ -1,0 +1,643 @@
+/*########## DICAS*/
+
+/*VARIÁVEIS NO CSS
+Para criar uma variável em CSS devemos criar uma classe com ":root", dentro dela criar as variáveis que são iniciadas por "--"
+
+OBS: Para utilizar as variáveis devemos usar como parâmetro a sintaxe "var([nome_variavel])*/
+:root {
+    --cor0: #c5ebdc; /*Definindo uma cor para a variável*/
+    --cor1: #83e1ad; /*Definindo uma cor para a variável*/
+    --cor2: #3ddc84; /*Definindo uma cor para a variável*/
+    --cor3: #2fa866; /*Definindo uma cor para a variável*/
+    --cor4: #1a5c37; /*Definindo uma cor para a variável*/
+    --cor5: #063d1e; /*Definindo uma cor para a variável*/
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;  /*Definindo uma fonte para a variável*/
+    --fonte-destaque: 'Bebas Neue', cursive;  /*Definindo uma fonte para a variável*/
+    --fonte-android: 'Android', cursive;  /*Definindo uma fonte para a variável*/
+}
+/*EX de uso*/
+background-color: var(--cor4);
+
+
+/*CONFIGURAÇÃO GLOBAL
+Caso queira setar algum parâmetro em TODOS os lugares, pode utilizar o elemento "*"*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+/*Aqui iremos retirar a Margin e o Padding de TODOS os elementos da pagina*/
+
+/*
+HEIGHT ==> ALTURA
+WIDTH ==> LARGURA
+WEIGHT ==> PESO
+*/
+
+/*
+TAG BOX-LEVEL (Gera uma linha nova para o elemento, ocupa a largura inteira da tela): 
+<div>
+<h1>-<h6>
+<p>
+<main>
+<header>
+<nav>
+<article>
+<aside>
+<footer>
+<form>
+<video>
+
+TAG INLINE-LEVEL (Gera o elemento na mesma linha, ocupa apenas a largura necessária para a caixa): 
+<span>
+<a>
+<code>
+<small>
+<strong>
+<em>
+<sup>-<sub>
+<label>
+<button>
+<input>
+<select>
+*/
+
+/*##### CORES*/
+/*Para colocar cores temos 4 métodos diferentes:
+1- Colocar o nome em ingles
+	color: white
+	color: black
+	color: yellow
+	
+2- Código hexadecimal (6 caracteres)
+	color: #ffffff
+	color: #000000
+	color: #ffff00
+	
+3- Código RGB
+	color: rgb(255, 255 ,255)
+	color: rgb(0, 0, 0)
+	color: rgb(255, 255, 0)
+	
+4- Código HSL (H = matiz (numero), S = saturação (porcentagem), L = luminosidade (porcentagem))
+	color: hsl(240, 100%, 50%)
+	color: hsl(0, 0%, 0%)
+	color: hsl(60, 100%, 50%)
+	
+OBS: É possível tambem mexer com a transparência, no VSCode baste movimentar uma barra que tem ao lado da cor principal e a transparência é aplicada automaticamente
+*/
+
+/*##### HARMONIA DE CORES*/
+/*
+Ferramentas interessantes a serem utilizadas:
+	- color.adobe.com
+	- paletton.com (Dá um preview da página tbm)
+	- coolors.com (Gera as cores de forma aleatória)
+*/
+
+/*DICA SHORTHAND
+Podemos simplificar o estilo de fonte em uma unica linha chamada de "Shorthand"*/
+font: [font_style] [font_weight] [font_size] [font_family]
+font: italic bolder 3em 'Work Sans', sans-serif;
+
+/*IMPORTAR FONTES DE SITES EXTERNOS
+Para poder importar fontes podemos acessar o Google Fonts
+Procurar a fonte que deseja utilizar
+Adicionar na lista
+
+OBS: Não esquecer de usar o @import no começo da parte de Style, seja no arquivo CSS ou como chamada local*/
+
+/*Separar as tags por ID ou CLASS
+	HTML ==> id    em CSS será "#"
+	HTML ==> class em CSS será "."
+	Pseudo-Classe em CSS será ":"
+	Pseudo-Elemento em CSS será "::"
+	Hierarquia (Children) em CSS será ">"
+*/
+
+/*PSEUDO-CLASSES
+São na verdade ações que acontecem na págna, e ao acontecer tal ação as propriedades configuradas serão executadas.
+mais detalhes no arquivo Pseudoclasse.css*/
+
+/*Especificar tags para estilização
+Para dizer por exemplo que eu quero estilizar APENAS os parágrafos que estão dentro de uma div devo utilizar:
+	div > p
+Nesse caso, apenas os "p" que estão dentro de uma div serão afetados pela configuração.
+OBS: Pode colocar quantas Tags quiser.
+*/
+div > p {
+	display: none;
+}
+
+/*Ao deixar o mouse em cima, faz coisas*/
+div:hover > p {
+	display: block;
+	color: white;
+	background-color: red;
+	width: 300px;
+}
+
+/*Ao focar um elemento, ele assume tais características*/
+#search-button:focus {
+    background-color: var(--light-primary);
+}
+
+
+
+
+
+/*########## ESTILIZAÇÃO DAS FORMAS*/
+
+/*Largura mínima de um elemento (Muito utilizado para responsividade)*/
+min-width: 300px;
+
+/*Largura mínima de um elemento (Muito utilizado para responsividade)*/
+max-width: 300px;
+
+/*Para poder configurar a mesma TAG porém de formas diferentes temos alguns modos.
+OBS: o "ID" em HTML é substituído por "#" no CSS
+	 o "Class" em HTML é substituído por "." no CSS
+	1- Colocando o ID na tag:*/
+	HTML ==> <h1 id="principal">Criando sites com HTML e CSS</h1>
+	CSS  ==> h1#principal {text-align: center;}
+	/*OBS: Acontece a herança de parâmetros, se tiver algo antes que impacte o H1 será aplicado a essa linha*/
+
+/*Altura*/
+height: [altura_a_ser_ocupada]
+
+/*Largura*/
+width: [largura_a_ser_ocupada]
+
+/*Peso*/
+weight: [peso]
+
+/*Deixar um elemento em Box-level (O elemento vira um bloco)*/
+display: block;
+
+/*Deixar um elemento em Inline-level (Não tem a propriedade de altura e largura por exemplo)*/
+display: inline;
+
+/*Deixar um elemento em Inline-level com propriedades de Bloco*/
+display: inline-block;
+
+/*Fazer com que o elemento utilize 100% do espaço destinado a ele, mesmo nao tenho conteúdo*/
+main {
+    flex-grow: 1;
+}
+
+
+/*### BORDA*/
+/*Largura da borda*/
+border-width: [tamanho_desejado]; /*px, em....*/
+
+/*Estilo da borda*/
+border-style: [config_aqui]; /*double, doshed, solid...*/
+
+/*Cor da borda*/
+border-color: [cor_da_borda];
+
+/*SHORTHANDS
+espessura -> estilo -> cor*/
+border: 10px solid darkslategray;
+
+
+/*### PADDING
+Espaço interno entre a borda e o texto*/
+/*Superior*/
+padding-top: [tamanho_desejado]; /*px, em....*/
+
+/*Direita*/
+padding-right: [tamanho_desejado]; /*px, em....*/
+
+/*Baixo*/
+padding-bottom: [tamanho_desejado]; /*px, em....*/
+
+/*Esquerda*/
+padding-left: [tamanho_desejado]; /*px, em....*/
+
+/*SHORTHANDS
+topo -> direita -> baixo -> esquerda
+
+OBS: Caso sejam de tamanho iguais, pode colocar apenas uma vez
+OBS2: Caso coloque apenas 2 valores, o primeiro vale para Cima e Baixo; o segundo valor vale para Direita e Esquerda
+OBS3: Caso queira deixar centralizado porém com uma borda superior e inferior, ao invés de informar o tamanho em PX das bordas laterais, pode ser colocada como "auto"*/
+padding: 10px 15px 20px 25px;
+padding: 10px auto 20px auto;
+
+
+/*### MARGIN*/
+/*Espaço externo entre a borda e o conteúdo externo*/
+/*Superior*/
+margin-top: [tamanho_desejado]; /*px, em....*/
+
+/*Direita*/
+margin-right: [tamanho_desejado]; /*px, em....*/
+
+/*Baixo*/
+margin-bottom: [tamanho_desejado]; /*px, em....*/
+
+/*Esquerda*/
+margin-left: [tamanho_desejado]; /*px, em....*/
+
+/*Deixar um elemento no Centro da página*/
+margin: auto;
+
+/*SHORTHANDS
+topo -> direita -> baixo -> esquerda
+
+OBS: Caso sejam de tamanho iguais, pode colocar apenas uma vez
+OBS2: Caso coloque apenas 2 valores, o primeiro vale para Cima e Baixo; o segundo valor vale para Direita e Esquerda
+OBS3: Caso queira deixar centralizado porém com uma borda superior e inferior, ao invés de informar o tamanho em PX das bordas laterais, pode ser colocada como "auto"*/
+margin: 20px 20px 40px 20px;
+margin: 20px auto 40px auto;
+
+
+/*### OUTLINE*/
+/*Borda interna da margin
+Ela funciona meio q "Borda da Borda"*/
+/*Largura*/
+outline-width: [tamanho_desejado]; /*px, em....*/
+
+/*Estilo*/
+outline-style: [config_aqui]; /*double, doshed, solid...*/
+
+/*Cor*/
+outline-color: [nome_da_cor_ou_RGB];
+
+/*SHORTHANDS
+largura -> estilo da borda -> cor
+outline: 5px dashed salmon;
+
+
+/*### IMAGENS*/
+/*Imagem responsiva
+Para que a imagem preencha o espaço todo, podemos colocar o que a imagem ocupará "100%" do espaço que pode ser utilizado, sendo assim conforme tiver mais pixels dospiníveis ela vai se adequendo.
+O mesmo ocorre quando nao tem tantos pixels disponiveis, a imagem vai diminuindo.*/
+img {
+    width: 100%;
+}
+
+/*Imagem Centralizada
+Para centralizar uma imagem em um elemento, precisamos tranformar ela primeiramente em um "bloco"
+Ao transformar em bloco podemos usar a propriedade do "Margin: auto" para que ela fique sempre centraizada*/
+img{
+    display: block;
+    margin: auto;
+}
+
+/*Imagem com efeito parallax
+Efeito Parallax é o efeito que temos que ao rolar a página a imagem fica FIXA no fundo*/
+background-attachment: fixed;
+
+/*Imagem redonda
+Para tornar uma imagem redonde e deixar ela como se fosse um botão redondo por exemplo basta colocar o border radius ocupando metade da imagem.*/
+border-radius: 50%;
+
+
+
+/*Animação
+Podemos adicionar uma animação na hora que o elemento aparece
+para isso criamos o "transition duration"
+
+OBS: Nesse caso, tudo o que acontecer com os links, como por exemplo alterar cor ao colocar o mouse em cima, a animação dura 1 segundo*/
+a {
+    transition-duration: 1s;
+}
+
+
+/*### VÍDEOS EXTERNOS CENTRALIZADOS*/
+/*Para que possamos centralizar um vído do YOutube por exemplo que vem de um "iFrame", precisamos primeiramente colocar ele dentro de uma "div"
+
+OBS: Para exemplo, já colocamos a Class no qual a div irá pertencer*/
+<div class="video">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/l2UDgpLz20M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+/*Já na pagina do CSS devemos adicionar as 2 configurações abaixo.*/
+/*Padding-Bottom: quando bem adequado faz com que o vídeo se adapte sem deixar bordas pretas nos cantos ou na parte superior/inferior.
+position: A posição da "div" OBRIGATORIAMENTE deve ser "relative"
+
+OBS: O valor da % pode variar de acordo com a necessidade. */
+div.video {
+    padding-bottom: 56.6%;
+    position: relative;
+}
+
+/*position: A posição do "iframe" OBRIGATORIAMENTE deve ser "absolute"
+top: Como se fosse o "padding" da div, deve ser em % para acompanhar a responsividade.
+left: Como se fosse o "padding" da div, deve ser em % para acompanhar a responsividade.
+width: Como mudamos o "position" para absolute, podemos mexer nessa configuração, onde a largura deve ser colocada em % para acompanhar a responsividade
+height: Como mudamos o "position" para absolute, podemos mexer nessa configuração, onde a altura deve ser colocada em % para acompanhar a responsividade
+
+OBS: Os valores das % podem variar de acordo com a necessidade. */
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+
+
+/*### SOMBRAS*/
+/*Sombra da caixa
+box-shadow
+Sombrear a caixa do elemento
+deslocamento horizontal -> deslocamento vertical -> embaçamento -> espalhamento -> cor
+
+DICA: NUNCA colocar sombra com outra cor, o que pode ser usado é ADICIONAR uma transparência no preto para a sombra nao ficar muito forte
+DICA2: Recomendado usar de 0.5 para baixo a transparência 
+
+OBS: Caso queira criar uma sombra INTERNA, basta colocar "inset" antes dos parâmetros*/
+box-shadow: 5px 3px 7px 1px rgba(0, 0, 0, 0.349);
+
+/*### Arredondamento de borda*/
+/*Arredondar as bordas de uma tag */
+/*Superior Esquerda*/
+border-top-left-radius: 10px;
+
+/*Superior Direita*/
+border-top-right-radius: 10px;
+
+/*Inferior Direita*/
+border-bottom-right-radius: 10px;
+
+/*Inferior Esquerda*/
+border-bottom-left-radius: 10px;
+
+/*SHORTHANDS
+topo-esquerdo -> direita -> baixo -> esquerda
+
+OBS: Caso sejam de tamanho iguais, pode colocar apenas uma vez
+OBS2: Caso coloque apenas 2 valores, o primeiro vale para Cima Esquerda e Baixo Direita; o segundo valor vale para Cima Direita e Baixo Esquerda */
+border-radius: 5px 15px 25px 35px;
+
+/*Gerar uma bola
+Para gerar uma bola podemos criar uma DIV com as seguintes configs:*/
+div#bola {
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+}
+
+
+
+/*##### CORES*/
+
+/*ALTERAR FUNDO*/
+/*Alterar cor de fundo*/
+background-color: [nome_da_cor_ou_RGB];
+
+/*Alterar cor de fundo em degradê
+Nas cores podem ter quantas quiser*/
+/*Em linhas*/
+background-image: linear-gradient(to right, white, blue); /*Indicação de sentido*/
+background-image: linear-gradient(45deg, white, blue); /*Indicação em graus*/
+background-image: linear-gradient([sentido_do_degrade], [cor1], [cor2], [cor3]);
+
+/*Em Circulo*/
+background-image: radial-gradient(circle, white, blue);
+
+/*Fixar o fundo, para que nao mude conforme for dando o Scroll*/
+background-attachment: fixed;
+
+/*Para que uma imagem preencha 100% do navegador e não se distorça ou se repita, definimos que a configuração abaixo
+
+DICA: Usar o tamanho em "vh" (View Height) que seria a área de visuzalização, dessa forma ela vai se modificando conforme o tamanho da tela */
+height: 100vh;
+
+/*Colocar uma imagem como fundo*/
+background-image: url([local_do_arquivo]); /*Pode ser colocada entre aspas tbm o caminho*/
+
+/*Definir o tamanho da imagem de fundo*/
+background-size: 100px 100px;
+background-size: cover; /*Preenche 100% do espaço porém sem achatar a imagem, pode até cortar uma parte, mas não achata
+						  OBS: Ao rolar a página para baixo, pode ter um problema onde a imagem se repete no eixo Y, ou fica apenas a cor de fundo para resolver utilizamos a "background-attachment"*/
+
+/*Definir o modo que a imagem aparece (Ancoragem da imagem de fundo)*/
+background-attachment: fixed;
+
+/*Sem repetição da imagem de fundo*/
+background-repeat: no-repeat;
+
+/*Repetir a imagem de fundo apenas no eixo Horizontal*/
+background-repeat: repeat-x;
+
+/*Repetir a imagem de fundo apenas no eixo Vertical*/
+background-repeat: repeat-y;
+
+/*Indicar a ancoragem da imagem de fundo
+
+OBS: Caso use no BODY não esquecer de adaptar a altura para que nao fique uma imagem achatada*/
+background-position: left top; /*(Podemos utilizar, center, top, bottom, left e right*/
+
+/*SHORTHANDS
+color -> image -> position -> repeat -> attachment*/
+background: black url(images/wallpaper002.jpg) center center no-repeat fixed;
+
+/*Para alinhar uma imagem no meio com uma div (centralização vertical)*/
+<style>
+        #container {
+            background-image: url(images/target001.png);
+            background-size: 100% 100%;
+            position: relative; /*OBRIGATÓRIO*/
+        }
+
+        #conteudo {
+            background-image: url(images/target001.png);
+            background-size: 100% 100%;
+            position: absolute; /*OBRIGATÓRIO*/
+            left: 50%; /*OBRIGATÓRIO*/
+            top: 50%; /*OBRIGATÓRIO*/
+            transform: translate(-50%, -50%); /*OBRIGATÓRIO*/
+        }
+</style>
+<section id="container">
+	<article id="conteudo">
+
+	</article>
+</section>
+
+
+
+/* ##### FONTE*/
+/*Alterar cor da fonte*/
+color: [nome_da_cor_ou_RGB];
+
+/*Alterar fonte
+DICA: Colocar mais de um tipo de fonte, pois caso o navegador não suporte a primeira opção, tenta a segunda e assim por diante*/
+font-family: [nome_da_fonte_1], [nome_da_fonte_2];
+
+/*Alterar tamanho fonte
+Existem 2 tipos de medidas sendo elas:
+	ABSOLUTAS:
+	cm  (centímetros)
+	mm	(milímetros)
+	in	(polegadas)
+	pt	(pontos = 1/72 de uma polegada)
+	pc	(picas = 12 pontos)
+	px	(pixels)  ==> Recomendado
+	
+	RELATIVAS:
+	em   (Relativa ao tamanho da letra M de uma fonte (Maiúscula)) ==> Recomendado
+	ex   (Relativa ao tamanho da letra x de uma fonte (Minúscula))
+	rem  (Relativo ao tamanho da letra do body da pagina) 
+	vw   (Relativo a largura da sua tela)
+	vh   (Relativo a altura da sua tela)
+	
+OBS1: O tamanho padrão das fontes é de 16px
+OBS2: 16px geralmente = 1em; ou seja, 1em equivalem a 16 pixels
+
+DICA1: SEMPRE utilizar ou o tamanho "px" ou "em"
+DICA2: Utilizar o tamanho "em" pelo fato de termos telas pequenas como relógios, e grandes como TV ele se adapta conforme a %
+*/
+font-size: [tamanho_da_fonte]px;
+font-size: [tamanho_da_fonte]em;
+font-size: [tamanho_da_fonte]vh; /*Adaptar o tamanho da fonte conforme a tela, se a tela for maior a fonte fica maior, se a tela for menor a fonte fica menor tambem
+									OBS: A melhor forma é utilizando as "Media Queries", porém funciona*/
+
+/*Alinhamento de texto
+	Esquerda: left
+	Centralizado: center
+	Direita: right
+	Justificado: justify
+*/
+text-align: [modo_que_será_alinhado];
+
+/*Tamanho da margem (Deixar um espaço vazio antes do início da frase)*/
+text-indent: [tamanho_a_ser_dado_o_espaçamento]; /*Pode ser em px, em, cm.....*/
+
+/*Peso da fonte, deixar mais gordinha ou mais magrinha (Negrito)
+OBS: A fonte deve ser a "Work-Sans"
+OBS2: A fonte deve ser importada via API do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+font-family: 'Work Sans', [outras_fontes];
+font-weight: [peso_da_fonte]; /*lighter normal bold bolder OU um numero de 100 a 900*/
+
+/*Fonte em itálico*/
+font-style: italic;
+
+/*Fonte sublinhada*/
+text-decoration: [tipo_do_sublinhado];
+
+/*DICA SHORTHAND
+Podemos simplificar o estilo de fonte em uma unica linha chamada de "Shorthand"*/
+font: [font_style] [font_weight] [font_size] [font_family]
+font: italic bolder 3em 'Work Sans', sans-serif;
+
+/*Distancia de uma linha para a outra dentro de um Paragrafo por exemplo*/
+p {
+    line-height: 1em; /*Deixar a distancia bem pequena*/
+}
+
+/*Transformar um texto, como por exemplo colocar TODAS as letras em maiúsculo
+OBS: Possui tambem outras funções*/
+text-transform: uppercase;
+
+/*Tirar a quebra de linha dentro de um input*/
+.movie-name-wrapper > input {
+    flex-wrap: nowrap;
+}
+
+/*ALinhar Label e Input
+As vezes a caixa de input é maior que a caixa de Label, para isso podemos alterar uma propriedade e alinhar ambos*/
+.movie-year-wrapper {
+    align-items: center;
+}
+
+
+
+/*### LISTAS*/
+/*Caso a "bolinha" das listas fique do lado de fora do elemento que necessita (é o Padrão), precisamos informar que queremos ela do lado de dentro*/
+ul {
+    list-style-position: inside;
+}
+
+/*Para dividir a lista em mais de uma coluna usamos a propriedade "columns"*/
+ul {
+    columns: 2;
+}
+
+/*Alterar a "bolinha" que aparece na UL por um emoji
+DICA: Acessar o EMojipedia para achar o código do Emoji*/
+ul {
+    list-style-type: '\2714\00A0\00A0'; /* NÃO ESQUECER NO "\" ANTES (No final foi colocado o "\00A0" que significa o "espaço" para dar um espaçamento com o texto da lista*/
+}
+
+
+
+/*### TABELAS*/
+/*Para estilizar tabelas deveos nos atentar as seguintes informações:
+Para estilizar a borda da tabela como um todo, vamos estilizar a tag "table"
+Para estilizar a borda de cada campo presente na tabela e fazer por exemplo grade em cada uma das células, vamos estilizar os "td"*/
+
+/*Não deixar espaço entre os dados da tabela*/
+border-collapse: collapse;
+
+/*Alinhar texto das colunas no meio na Horizontal (eixo X)
+OBS: Estilização na tag "td"*/
+text-align: center;
+
+/*Alinhar texto das colunas no meio na Vertical (eixo Y)
+OBS: Estilização na tag "td"*/
+vertical-align: bottom;
+
+/*Efeito zebrado
+Consutlar o arquivo de Pseudoclasse*/
+
+/*Deixar o cabeçalho congelado assim que ele for sumir (Congelar cabeçalho)*/
+table {
+	position: relative; /*OBRIGATÓRIO*/
+}
+
+thead > tr > th {
+	position: sticky; /*OBRIGATÓRIO*/
+	top: -1px; /*OBRIGATÓRIO, colocamos -1px para que não apareça uma pequena fresta na aprte de cima quando for rolar a página para baixo*/
+	background-color: [colocar_a_cor_de_background_do_cabeçalho]; /*OBRIGATÓRIO*/
+}
+
+/*Destacar uma coluna inteira
+Para destacar uma coluna inteira, precisamos criar um "Grupo de coluna"
+
+OBS: A quantidade de "col" dentro da tag de ColGroup depende de quantas colunas tem na tabela
+Cada uma dessas tags "col" é possivel dar a elas uma classe ou id, que pode ser configurado no Style da página*/
+<colgroup>
+	<col class="cnome">
+	<col class="csexo">
+	<col class="cidade">
+	<col class="cprof">
+</colgroup>
+/*É POSSIVEL COLOCAR A MESMA CLASSE EM 2 COLUNAS QUE ESTEJAM UMA DO LADO DA OUTRA COM O PARÂMETRO SPAN
+Dessa forma configuramos as 4 colunas da mesma forma, porém 2 delas va ter a mesma configuração*/
+<colgroup>
+	<col class="cnome">
+	<col class="csexo", span="2">
+	<col class="cprof">
+</colgroup>
+
+/*Tabela responsiva
+Antes de tudo, deve ser feito o ENVELOPAMENTO da tabela toda em uma div.
+Essa div deve receber um ID ou uma class que tenha o atributo "overflow" (Transbordar)
+Com isso, ao rolar para o lado a página por exemplo, apenas a tabela será rolada, o texto da página ficará estático
+
+OBS: o Overflow tem no modo "y" e apenas "overflow" tambem.
+*/
+div#container {
+	overflow-x: auto;
+}
+
+<div id="container">
+	<table>
+	</table>
+</div>
+
+
+
+/*### IFRAME*/
+/*Barra de rolagem (scrolling)
+Existem 3 modos para as barras de rolagem: */
+scrolling="auto" /*Caso a pagina tenha um conteúdo maior, aparece a barra de rolagem*/
+scrolling="yes" /*Aparece a barra de rolagem independente do tamanho*/
+scrolling="no" /*Não aparece a barra de rolagem e a pagina fica parecendo uma imagem, snedo impossivel mexe-la*/
+
