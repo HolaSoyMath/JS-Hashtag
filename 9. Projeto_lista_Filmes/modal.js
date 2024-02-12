@@ -20,6 +20,7 @@ function addCurrentMovieToList(){
         notie.alert({type: 'success', text: 'Filme adicionado com sucesso!'});
         addToList(currentMovie);
         updateUI(currentMovie);
+        updateLocalStarage();
         closeModal();
     }
 }
