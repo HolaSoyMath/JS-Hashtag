@@ -13,11 +13,16 @@ function closeModal(){
 }
 
 function addCurrentMovieToList(){
-    addToList(currentMovie);
-    updateUI(currentMovie);
-    closeModal();
+    if (isMovieAlreadyOnList(currentMovie.imdbID)){
+        notie.alert({type: 'error', text: 'Filme já está na sua lista!'});
+        return;
+    } else {
+        notie.alert({type: 'success', text: 'Filme adicionado com sucesso!'});
+        addToList(currentMovie);
+        updateUI(currentMovie);
+        closeModal();
+    }
 }
-
 
 function createModal(data) {
     currentMovie = data;
