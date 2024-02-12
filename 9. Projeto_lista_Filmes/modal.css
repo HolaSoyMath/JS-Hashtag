@@ -74,7 +74,8 @@
   box-shadow: 0.3px 0.3px 10px #000;
 }
 
-#add-to-list:focus, #add-to-list:hover{
+#add-to-list:focus, 
+#add-to-list:hover{
   background-color: var(--light-primary);
   color: var(--lightest-color);
 }

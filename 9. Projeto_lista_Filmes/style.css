@@ -1,9 +1,9 @@
 :root{
     --primary-color: #29335c;
     --light-primary: #3f4f8d;
-    --lightest-color: #e9ebd5;
+    --ligthest--color: #e9ebd5;
     --secondary-color: #774936;
-    --light-secondary: #c08972;
+    --light-secondary: #b97e64;
 }
 
 * {
@@ -28,9 +28,9 @@ header {
     display: flex; /* Deixar os elementos da tag na horizontal */
     justify-content: space-between; /* Justificar os espaços entre o que tem dentro*/
     align-items: center;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem;
     background-color: var(--primary-color);
-    color: var(--lightest-color);
+    color: var(--ligthest--color);
 }
 
 /* Pode ser
@@ -62,7 +62,7 @@ header > h2 > i {
 #search-button {
     width: 5%;
     padding: 0.3rem;
-    border: 2px solid var(--lightest-color);
+    border: 2px solid var(--ligthest--color);
     border-radius: 10px;
 }
 
@@ -95,7 +95,41 @@ header > h2 > i {
 main {
     text-align: center;
     padding: 2rem 0;
-    background-color: var(--lightest-color);
+    background-color: var(--ligthest--color);
     color: var(--primary-color);
     flex-grow: 1;
+}
+
+#movie-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+#movie-list article {
+    display: flex;
+    flex-direction: column;
+}
+
+#movie-list article > img {
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.remove-button{
+    border: 3px solid var(--secondary-color);
+    padding: 0.3rem 0;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0.3px 0.3px 10px #000;
+    color: var(--secondary-color);
+}
+
+.remove-button:focus, 
+.remove-button:hover{
+  background-color: var(--light-secondary);
+  color: var(--lightest-color);
 }
