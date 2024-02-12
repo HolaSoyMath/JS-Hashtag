@@ -57,11 +57,17 @@ function isMovieAlreadyOnList(id) {
 }
 
 function updateUI(movieObject){
-    movieListContainer.innerHTML += `<article>
+    movieListContainer.innerHTML += `<article id='movie-card-${movieObject.imdbID}'>
     <img src=${movieObject.Poster} alt="Poster de ${movieObject.Title}">
-    <button class="remove-button"><i class="bi bi-trash"></i>Remover</button>
+    <button class="remove-button" onclick="{removeFilmFromList('${movieObject.imdbID}')}"><i class="bi bi-trash"></i>Remover</button>
   </article>
   `;
+}
+
+function removeFilmFromList(id) {
+    movieList = movieList.filter(movie => movie.imdbID !== id);
+    document.getElementById(`movie-card-${id}`).remove()
+
 }
 
 searchButton.addEventListener('click', searchButtonClickHandler);
