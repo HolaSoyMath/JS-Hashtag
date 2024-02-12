@@ -15,7 +15,8 @@ async function searchButtonClickHandler() {
     if (data.Error) {
       throw new Error('Filme não encontrado')
     }
-    // overlay.classList.add('open');
+    createModal(data);
+    overlay.classList.add('open');
   } catch (error) {
     notie.alert({
       type: 'error',
