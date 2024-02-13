@@ -1,0 +1,38 @@
+<!--Arquivo index.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Document</title>
+</head>
+<body>
+  <h2>Eventos em elementos HTML</h2>
+
+  <!-- EXercicio 1 -->
+  <p 
+    onmouseover="mudarCor(this,'red')"
+    onmouseout="mudarCor(this,'black')"
+  >Passe o mouse aqui para mudar a cor do texto.</p>
+
+  <!-- Exxercicio 2 -->
+  <button onclick="clicarBotao()">Clique aqui</button>
+
+  <!-- Exxercicio 3 -->
+  <input 
+    onfocus="campoEmFoco(this)"
+    onblur="campoForaFoco(this)"
+    type="text" 
+    placeholder="Digite aqui"
+  />
+
+  <!-- Exxercicio 4 -->
+  <img 
+    src = 'imagem1.png'
+    onmouseout="mudarImagem(this, 'imagem1.png')" 
+    onmouseover="mudarImagem(this, 'imagem2.png')" 
+    alt="Imagem misteriosa" />
+  <script src="script.js"></script>
+</body>
+</html>
