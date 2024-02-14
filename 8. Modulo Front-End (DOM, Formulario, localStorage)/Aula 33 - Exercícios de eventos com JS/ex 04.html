@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 4</title>
+  <style>
+    body{
+      height: 2000px;
+      width: 600px;
+      background-color: bisque;
+    }
+  </style>
+</head>
+<body>
+  <h1>Prevenir a rolagem com JS</h1>
+  <script>
+    let count = 0;
+    function preventScroll(event) {
+      count++; // +1
+      console.log(count);
+
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        console.log("Rolagem para baixo foi desativada");
+
+        if (count >= 10) {
+          console.log("Removendo event listener após 10 pressionamentos");
+          document.removeEventListener("keydown", preventScroll);
+        }
+      }
+    }
+    document.addEventListener("keydown", preventScroll);
+  </script>
+</body>
+</html>

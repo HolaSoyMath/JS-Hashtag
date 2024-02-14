@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 2</title>
+</head>
+<body>
+  <button id="btn">teste</button>
+  <script>
+    const elemento = document.getElementById('btn');
+    let count = 0;
+
+    function handleClick() {
+      count ++;
+      console.log('Quantidade de cliques: ', count);
+      if (count >= 3) {
+        elemento.removeEventListener('click', handleClick);
+      }
+    }
+
+    elemento.addEventListener('click', handleClick);
+  </script>
+</body>
+</html>
