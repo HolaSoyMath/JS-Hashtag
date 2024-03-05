@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#taskname {
+  border-radius: 5px;
+  border: 1px solid #999;
+  height: 20px;
+  padding: 5px;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: large;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: aqua;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  color: black;
+}

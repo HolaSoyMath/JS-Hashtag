@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 3</title>
+</head>
+<body>
+  <form action="" id="myForm">
+    <input type="text">
+    <button>Enviar</button>
+  </form>
+  <script>
+    const form = document.getElementById("myForm");
+
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      console.log(
+        "Formulário não foi enviado devido à prevenção do comportamento padrão"
+      );
+    }
+
+    form.addEventListener("submit", handleSubmit);
+
+    const input = form.querySelector("input");
+
+    input.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        console.log("Pressionar o Enter não envia o formulário");
+      }
+    });
+  </script>
+</body>
+</html>

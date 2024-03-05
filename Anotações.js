@@ -5,7 +5,7 @@ Para colocar a variável na string, utilizamos ${nomeDaVariavel}
 // ********** Tipos de variáveis **********
 
 let --> Pode alterar o valor da variável
-const --> Após a declaraçõa nao é possível alterar nada
+const --> Após a declaração nao é possível alterar nada
 
 // ********** Comparadores **********
 

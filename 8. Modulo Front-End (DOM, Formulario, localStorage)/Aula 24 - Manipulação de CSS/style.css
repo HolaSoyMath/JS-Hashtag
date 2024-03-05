@@ -1,0 +1,18 @@
+#meuElemento {
+  width: 200px;
+  height: 200px;
+  background-color: #3498db;
+  margin-bottom: 10px;
+}
+
+.square {
+  border-radius: 0%;
+}
+
+.circle {
+  border-radius: 100%;
+}
+
+.bordaMenor {
+  border-radius: 20%;
+}

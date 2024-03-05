@@ -1,0 +1,33 @@
+<!--Arquivo index.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Document</title>
+</head>
+<body>
+  <h2>Eventos em elementos HTML</h2>
+  <p 
+    id="paragrafo" 
+    onmouseover="alterarCorVermelho()"
+    onmouseout="alterarCorPreto()"
+    >Passe o mouse aqui para mudar a cor do texto.</p>
+  <button onclick="alerta()">Clique aqui</button>
+  <input 
+    id="campo" 
+    type="text" 
+    placeholder="Digite aqui"
+    onfocus="campoFocado()"
+    onblur='campoDesfocado()'
+     />
+  <img 
+    id = "imagem"
+    src = 'imagem1.png'
+    onmouseover="aparecerImagem2()"
+    onmouseout="aparecerImagem1()"
+    alt="Imagem misteriosa" />
+  <script src="script.js"></script>
+</body>
+</html>
